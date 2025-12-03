@@ -23,7 +23,7 @@
 
   .header {
     display: grid;
-    grid-template-columns: 1fr 148px 1fr;
+    grid-template-columns: 1fr 136px 1fr;
     align-items: center;
     height: 293px;
     font-size: var(--text-base);
@@ -40,7 +40,7 @@
     /* при flex-wrap, увеличение рамзера текста переносит строки меню,
     а не сдвигает логотип (в колонке с адресом есть свободное место) */
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 33px;
     list-style-type: circle;
     text-wrap: nowrap;
   }
@@ -59,8 +59,7 @@
   }
 
   .header__logo-link {
-    align-content: center;
-    transition: scale 0.2s ease;
+    transition: scale 0.3s ease;
   }
 
   /* немного отсебятины */
@@ -88,7 +87,7 @@
   * так, при увеличении размера шрифта (не в функции),
   * высота строки будет оставаться одинаковой относительно размера
   */
-  .header__contacts-line {
+  .header__address-line {
     line-height: calc(24.3 / 18);
     text-wrap: nowrap;
   }
