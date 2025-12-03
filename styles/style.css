@@ -1,1 +1,21 @@
-/* место для вашего кода */
+.header {
+  height: 293px;
+}
+
+.cover {
+  height: 757px;
+  background-image: url(/images/cover.jpg);
+  background-size: cover;
+}
+
+.lots {
+  height: 723px;
+}
+
+.about {
+  height: 595px;
+}
+
+.footer {
+  height: 180px;
+}
