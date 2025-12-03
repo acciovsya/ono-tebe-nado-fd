@@ -11,11 +11,13 @@
   </head>
 
   <body>
+    <!-- шапка страницы -->
+
     <header class="header">
       <nav class="header__nav">
         <ul class="header__menu">
           <li class="header__menu-item">
-            <a class="header__menu-link" href="#0">главная</a>
+            <a class="header__menu-link active" href="#0">главная</a>
           </li>
           <li class="header__menu-item">
             <a class="header__menu-link" href="#lots"> посмотреть лоты</a>
@@ -26,15 +28,20 @@
         </ul>
       </nav>
 
-      <a class="header__logo-link" href="#0">
-        <img class="header__logo" src="./images/logo-black.svg" alt="Оно тебе надо" />
+      <!-- в соответствии с инструкцией убран атрибут href -->
+      <a class="header__logo-link">
+        <img src="./images/logo-black.svg" alt="Оно тебе надо" />
       </a>
 
-      <address class="header__contacts">
-        <span class="header__contacts-line">+9 999 555 5555</span>
-        <span class="header__contacts-line">info@sobaka.ge</span>
-        <span class="header__contacts-line">наб. Принсенграхт 263-</span>
-        <span class="header__contacts-line">265, Амстердам</span>
+      <address class="address header__address">
+        <a class="header__address-line header__address-link_number" href="tel:+99995555555"
+          >+9 999 555 5555</a
+        >
+        <a class="header__address-line header__address-link_email" href="mailto:info@sobaka.ge"
+          >info@sobaka.ge</a
+        >
+        <span class="header__address-line">наб. Принсенграхт 263-</span>
+        <span class="header__address-line">265, Амстердам</span>
       </address>
     </header>
 

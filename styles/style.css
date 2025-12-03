@@ -1,24 +1,116 @@
-.header {
-  height: 293px;
-  border: 4px solid red;
-  padding: 92px 50px 96px;
+:root {
+  /* 
+  задал переменные для размера текста 
+  соответствующие размерам из макета
+  */
+  --text-base: 18px;
+  --text-lg: 20px;
+  --text-xl: 22px;
+  --text-2lx: 40px;
+  --text-3xl: 100px;
 }
 
-.section {
-  border: 4px solid red;
+/* использую слои только для возможности сворачивать блоки кода */
+
+/* Header
+  ========================================================================== */
+@layer header {
+  /* 
+  * изначально пробовал 1fr min-content 1fr,
+  * но все равно пришлось задавать размер логотипу,
+  * поэтому задал его в настройках грида
+  */
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 148px 1fr;
+    align-items: center;
+    height: 293px;
+    font-size: var(--text-base);
+  }
+
+  .header__nav {
+    grid-column: 1 / 2;
+    place-self: center;
+  }
+
+  .header__menu {
+    display: flex;
+
+    /* при flex-wrap, увеличение рамзера текста переносит строки меню,
+    а не сдвигает логотип (в колонке с адресом есть свободное место) */
+    flex-wrap: wrap;
+    gap: 32px;
+    list-style-type: circle;
+    text-wrap: nowrap;
+  }
+
+  /* 
+  * был отдельный класс как для menu-link,
+  * но решил использовать такой синтаксис, 
+  * так как href="#0" всегда ведет на главную
+  */
+  .header__menu-item:has([href='#0']) {
+    list-style-type: none;
+  }
+
+  .header__menu-link.active {
+    text-decoration: none;
+  }
+
+  .header__logo-link {
+    align-content: center;
+    transition: scale 0.2s ease;
+  }
+
+  /* немного отсебятины */
+  .header__logo-link:hover {
+    scale: 1.05;
+  }
+
+  .header__address {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3 / 4;
+    justify-self: end;
+    align-items: flex-start;
+    align-self: center;
+    width: 240px;
+    margin-right: 50px;
+    font-style: normal;
+  }
+
+  /* 
+  * в макете высота строки задана как 24.3px,
+  * решил рассчитать относительный размер
+  * 
+  * 18px - размер шрифта, используемый здесь.
+  * так, при увеличении размера шрифта (не в функции),
+  * высота строки будет оставаться одинаковой относительно размера
+  */
+  .header__contacts-line {
+    line-height: calc(24.3 / 18);
+    text-wrap: nowrap;
+  }
 }
 
-.cover {
-  height: 757px;
-  padding: 165px 50px 50px;
-  background-image: url(/images/cover.jpg);
-  background-size: cover;
-  margin-bottom: 180px;
+/* Cover
+  ========================================================================== */
+@layer cover {
+  .cover {
+    height: 757px;
+    margin-bottom: 180px;
+    padding: 165px 50px 50px;
+    background-image: url(/images/cover.jpg);
+    background-size: cover;
+  }
 }
 
-.lots {
-  height: 723px;
-  margin: 0 24px 120px;
+@layer lots {
+  .lots {
+    height: 723px;
+    margin: 0 24px 120px;
+  }
 }
 
 .about {
@@ -30,4 +122,8 @@
   height: 180px;
   border: 4px solid red;
   padding: 0 50px;
+}
+
+.section {
+  border: 4px solid red;
 }
