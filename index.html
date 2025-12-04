@@ -49,13 +49,26 @@
       <!-- обложка -->
 
       <section class="section cover">
-        <h1 class="cover__title">оНО</h1>
-        <h1 class="cover__title">ТЕБЕ</h1>
-        <h1 class="cover__title">НАДО</h1>
+        <div class="overlay"></div>
 
-        <div class="cover__description">
-          <p class="cover__text">Аукцион вещей, вкоторые никто не верил</p>
-          <button class="cover__button">Сделать ставку</button>
+        <!-- дополнительная обертка для поднятия контента над оверлеем -->
+        <div class="cover__content">
+          <h1 class="cover__title">
+            <span class="cover__title-first aligned-text">оНО</span>
+            <span class="cover__title-second aligned-text">ТЕБЕ</span>
+            <span class="cover__title-third aligned-text">НАДО</span>
+          </h1>
+
+          <div class="cover__description">
+            <!-- текст скопирован из макета ('вкоторые' слитно)
+            плюс у некоторых символов отличается letter-spacing,
+            все буду править в css -->
+
+            <p class="cover__text">
+              Аукцион вещей, <span class="big-spacing">в</span>которые никто не верил
+            </p>
+            <button class="cover__button">Сделать ставку</button>
+          </div>
         </div>
       </section>
 

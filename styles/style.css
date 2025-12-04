@@ -8,9 +8,29 @@
   --text-xl: 22px;
   --text-2lx: 40px;
   --text-3xl: 100px;
+
+  /* межбуквенные отступы и пробелы задаем 
+  относительно размера текста */
+  --spacing-09: 0.9em;
+  --spacing-11: 1.1em;
 }
 
 /* использую слои только для возможности сворачивать блоки кода */
+
+@layer utility {
+  .overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 60%;
+    background-color: #000;
+  }
+
+  .big-spacing {
+    letter-spacing: var(--spacing-11);
+  }
+}
 
 /* Header
   ========================================================================== */
@@ -25,7 +45,7 @@
     display: grid;
     grid-template-columns: 1fr 136px 1fr;
     align-items: center;
-    height: 293px;
+    padding: 93px 0 92px;
     font-size: var(--text-base);
   }
 
@@ -58,11 +78,11 @@
     text-decoration: none;
   }
 
+  /* немного отсебятины */
   .header__logo-link {
     transition: scale 0.3s ease;
   }
 
-  /* немного отсебятины */
   .header__logo-link:hover {
     scale: 1.05;
   }
@@ -86,9 +106,11 @@
   * 18px - размер шрифта, используемый здесь.
   * так, при увеличении размера шрифта (не в функции),
   * высота строки будет оставаться одинаковой относительно размера
+  *
+  * можно было использовать calc()
   */
   .header__address-line {
-    line-height: calc(24.3 / 18);
+    line-height: 1.35em;
     text-wrap: nowrap;
   }
 }
@@ -97,11 +119,76 @@
   ========================================================================== */
 @layer cover {
   .cover {
-    height: 757px;
+    position: relative;
+    min-height: 757px;
     margin-bottom: 180px;
-    padding: 165px 50px 50px;
-    background-image: url(/images/cover.jpg);
+    padding: 165px 19px 50px 50px;
+    color: #fff;
+    background-image: url(../images/cover.jpg);
     background-size: cover;
+
+    /* сдвинул фон для соответствия макету */
+    background-position: 50% 0;
+  }
+
+  /* флекс для более простой установки промежутка между 
+  заголовком и описанием */
+  .cover__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
+  }
+
+  .cover__title {
+    flex-direction: column;
+    font-size: var(--text-3xl);
+    line-height: 1.15em;
+    letter-spacing: 30px;
+    text-transform: uppercase;
+  }
+
+  .aligned-text {
+    display: block;
+    margin-bottom: 19px;
+  }
+
+  .cover__title-first {
+    text-align: left;
+  }
+
+  .cover__title-second {
+    text-align: center;
+  }
+
+  .cover__title-third {
+    text-align: right;
+  }
+
+  .cover__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 32px;
+    font-size: var(--text-xl);
+    text-transform: uppercase;
+  }
+
+  .cover__button {
+    border: 1px solid #fff;
+    padding: 12px 31px;
+    color: #fff;
+    text-transform: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .cover__text {
+    word-spacing: var(--spacing-09);
+
+    /* одна строчка текста - не думаю, что нам важна высота строки */
+    /* line-height: 1.3em; */
   }
 }
 
@@ -121,8 +208,4 @@
   height: 180px;
   border: 4px solid red;
   padding: 0 50px;
-}
-
-.section {
-  border: 4px solid red;
 }
