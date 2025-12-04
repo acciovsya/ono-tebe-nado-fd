@@ -15,7 +15,7 @@
   --spacing-11: 1.1em;
 }
 
-/* небольшие утилити классы */
+/* утилити классы */
 .overlay {
   position: absolute;
   inset: 0;
@@ -28,6 +28,31 @@
 
 .big-spacing {
   letter-spacing: var(--spacing-11);
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-style: normal;
+}
+
+.active {
+  text-decoration: none;
+}
+
+/* 
+ * в макете высота строки задана как 24.3px,
+ * решил рассчитать относительный размер
+ * 
+ * 18px - размер шрифта, используемый здесь.
+ * так, при увеличении размера шрифта (не в функции),
+ * высота строки будет оставаться одинаковой относительно размера
+ *
+ * можно было использовать calc()
+ */
+.address-line {
+  line-height: 1.35em;
 }
 
 /* Шапка
@@ -71,10 +96,6 @@
   list-style-type: none;
 }
 
-.header__menu-link.active {
-  text-decoration: none;
-}
-
 /* немного отсебятины */
 .header__logo-link {
   transition: scale 0.3s ease;
@@ -85,30 +106,11 @@
 }
 
 .header__address {
-  display: flex;
-  flex-direction: column;
   grid-column: 3 / 4;
   justify-self: end;
-  align-items: flex-start;
   align-self: center;
-  width: 240px;
+  width: 235px;
   margin-right: 50px;
-  font-style: normal;
-}
-
-/* 
- * в макете высота строки задана как 24.3px,
- * решил рассчитать относительный размер
- * 
- * 18px - размер шрифта, используемый здесь.
- * так, при увеличении размера шрифта (не в функции),
- * высота строки будет оставаться одинаковой относительно размера
- *
- * можно было использовать calc()
- */
-.header__address-line {
-  line-height: 1.35em;
-  text-wrap: nowrap;
 }
 
 /* Обложка
@@ -320,6 +322,34 @@
   ========================================================================== */
 
 .footer {
-  height: 180px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 82px;
   padding: 0 50px;
+  font-size: var(--text-base);
+}
+
+.footer__address {
+  justify-self: start;
+}
+
+.footer__nav {
+  text-align: center;
+}
+
+.footer__menu {
+  list-style-type: none;
+}
+
+.footer__socials {
+  display: flex;
+  justify-self: end;
+  gap: 48px;
+}
+
+.footer__social-link {
+  display: block;
+  width: 48px;
+  height: 48px;
 }

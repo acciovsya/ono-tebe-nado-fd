@@ -34,16 +34,14 @@
       </a>
 
       <address class="address header__address">
-        <a class="header__address-line header__address-link_number" href="tel:+99995555555"
-          >+9 999 555 5555</a
-        >
-        <a class="header__address-line header__address-link_email" href="mailto:info@sobaka.ge"
-          >info@sobaka.ge</a
-        >
-        <span class="header__address-line">наб. Принсенграхт 263-</span>
-        <span class="header__address-line">265, Амстердам</span>
+        <a class="address-line" href="tel:+99995555555">+9 999 555 5555</a>
+        <a class="address-line" href="mailto:info@sobaka.ge">info@sobaka.ge</a>
+        <!-- добавил символ тонкого пробела для переноса строки -->
+        <span class="address-line">наб. Принсенграхт 263-&thinsp;265, Амстердам</span>
       </address>
     </header>
+
+    <!-- основной контент -->
 
     <main>
       <!-- обложка -->
@@ -153,31 +151,40 @@
       </section>
     </main>
 
-    <!-- <footer class="footer">
-      <address class="footer__contacts">
-        <span class="footer__contacts-line">+9 999 555 5555</span>
-        <span class="footer__contacts-line">info@sobaka.ge</span>
-        <span class="footer__contacts-line">наб. Принсенграхт 263-</span>
-        <span class="footer__contacts-line">265, Амстердам</span>
+    <!-- повдал страницы-->
+
+    <footer class="footer">
+      <address class="address footer__address">
+        <a class="address-line" href="tel:+99995555555">+9 999 555 5555</a>
+        <a href="mailto:info@sobaka.ge" class="address-line">info@sobaka.ge</a>
+        <span class="address-line">наб. Принсенграхт 263-265, Амстердам</span>
       </address>
 
-      <div class="footer__navigation">
-        <a class="footer__navigation-link" href="#0">главная</a>
-        <a class="footer__navigation-link" href="#lots">посмотреть лоты</a>
-        <a class="footer__navigation-link" href="#about">об аукционе</a>
-      </div>
+      <nav class="footer__nav">
+        <ul class="footer__menu">
+          <li>
+            <a class="active" href="#0">главная</a>
+          </li>
+          <li>
+            <a href="#lots"> посмотреть лоты</a>
+          </li>
+          <li>
+            <a href="#about"> об аукционе</a>
+          </li>
+        </ul>
+      </nav>
 
       <div class="footer__socials">
-        <a class="footer-socials__link" href="#0">
-          <img class="footer__social-icon" src="./images/yt.svg" alt="YouTube" />
+        <a class="footer__social-link" href="#0">
+          <img src="./images/yt.svg" alt="YouTube" />
         </a>
-        <a class="footer-socials__link" href="#0">
-          <img class="footer__social-icon" src="./images/vk.svg" alt="VK" />
+        <a class="footer__social-link" href="#0">
+          <img src="./images/vk.svg" alt="VK" />
         </a>
-        <a class="footer-socials__link" href="#0">
-          <img class="footer__social-icon" src="./images/pinterest.svg" alt="Pinterest" />
+        <a class="footer__social-link" href="#0">
+          <img src="./images/pinterest.svg" alt="Pinterest" />
         </a>
       </div>
-    </footer> -->
+    </footer>
   </body>
 </html>
