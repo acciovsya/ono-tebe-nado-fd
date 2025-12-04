@@ -9,8 +9,6 @@
   --text-2lx: 40px;
   --text-3xl: 100px;
 
-  /* межбуквенные отступы и пробелы задаем 
-  относительно размера текста */
   --spacing-09: 0.9em;
   --spacing-11: 1.1em;
 }
@@ -44,10 +42,6 @@
 /* 
  * в макете высота строки задана как 24.3px,
  * решил рассчитать относительный размер
- * 
- * 18px - размер шрифта, используемый здесь.
- * так, при увеличении размера шрифта (не в функции),
- * высота строки будет оставаться одинаковой относительно размера
  *
  * можно было использовать calc()
  */
@@ -113,7 +107,7 @@
   grid-column: 3 / 4;
   justify-self: end;
   align-self: center;
-  width: 235px;
+  max-width: 235px;
   margin-right: 55px;
 }
 
@@ -202,11 +196,11 @@
 }
 
 .lots__heading {
-  text-transform: uppercase;
   margin-bottom: 27px;
   margin-left: 40px;
   color: #000;
   font-size: var(--text-2lx);
+  text-transform: uppercase;
 }
 
 /* использовал грид, чтоб не задавать ширину карточкам */
@@ -297,14 +291,14 @@
   justify-self: center;
   justify-content: center;
   align-items: center;
-  width: 240px;
-  height: 240px;
+  min-width: 240px;
+  min-height: 240px;
   border-radius: 100%;
   background-color: #000;
 }
 
 .about__logo {
-  width: 148px;
+  max-width: 148px;
 }
 
 .about__title {
@@ -327,8 +321,8 @@
 
 .footer {
   display: grid;
-  justify-items: center;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   margin-bottom: 82px;
   padding: 0 50px;
   font-size: var(--text-base);
@@ -354,6 +348,6 @@
 
 .footer__social-link {
   display: block;
-  width: 48px;
-  height: 48px;
+  max-width: 48px;
+  max-height: 48px;
 }
