@@ -356,8 +356,16 @@
   gap: 48px;
 }
 
+/* добавил max-width самим иконкам, 
+а ссылкам установил это как min-width,
+(до этого не рендерилось в firefox без live-server) */
 .footer__social-link {
   display: block;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.footer__social-link-icon {
   max-width: 48px;
   max-height: 48px;
 }
