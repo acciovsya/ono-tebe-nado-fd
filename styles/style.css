@@ -14,7 +14,14 @@
 }
 
 /* утилити классы */
+
+/* используются псевдо-элементы */
 .overlay {
+  position: relative;
+}
+
+.overlay::after {
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -86,11 +93,16 @@
 }
 
 /* 
- * был отдельный класс как для menu-link,
- * но решил использовать такой синтаксис, 
- * так как href="#0" всегда ведет на главную
+ я думал изначально использовать :first-child, но не стал, так
+ как это бы нарушило логику при изменении положения 
+ ссылки "Главная" в списке, но щас понял, 
+ что просто перепутал list-style-type и text-decoration,
+ который мы и так уже настроили классом .active
+
+ href="#0" наоборот не сработало бы правильно в текущем контексте
+ как раз по причине возможного изменения положения ссылок в списке
  */
-.header__menu-item:has([href='#0']) {
+.header__menu-item:first-child {
   list-style-type: none;
 }
 
@@ -115,7 +127,6 @@
   ========================================================================== */
 
 .cover {
-  position: relative;
   min-height: 757px;
   margin-bottom: 180px;
   padding: 165px 19px 50px 50px;
@@ -222,7 +233,6 @@
 }
 
 .card {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
