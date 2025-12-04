@@ -82,9 +82,13 @@
   /* при flex-wrap, увеличение рамзера текста переносит строки меню,
     а не сдвигает логотип (в колонке с адресом есть свободное место) */
   flex-wrap: wrap;
-  gap: 33px;
+  gap: 29px;
   list-style-type: circle;
   text-wrap: nowrap;
+}
+
+.header__menu-item {
+  padding-left: 5px;
 }
 
 /* 
@@ -110,7 +114,7 @@
   justify-self: end;
   align-self: center;
   width: 235px;
-  margin-right: 50px;
+  margin-right: 55px;
 }
 
 /* Обложка
@@ -193,12 +197,12 @@
   ========================================================================== */
 
 .lots {
-  /* height: 723px; */
   margin: 0 24px 120px;
   color: #fff;
 }
 
 .lots__heading {
+  text-transform: uppercase;
   margin-bottom: 27px;
   margin-left: 40px;
   color: #000;
@@ -315,7 +319,7 @@
   grid-column: 2/-1;
   gap: 24px;
   font-size: var(--text-lg);
-  /* line-height: 1.2em; */
+  line-height: 1.2em;
 }
 
 /* Подвал
